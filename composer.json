@@ -1,0 +1,29 @@
+{
+    "name": "zbateson/phpcas-dev",
+    "type": "library",
+    "description": "Very simple testing/development environment for projects using jasig/phpcas",
+    "keywords": [
+        "web",
+        "framework"
+    ],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Zaahid Bateson"
+        }
+    ],
+    "provide": {
+        "jasig/phpcas": "~1.3"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "extra": {
+        "casdev": {
+            "password": "testing",
+            "defaultAttributes": "USER",
+            "sessionFile": "auth-map",
+            "sessionExpiryTime": 20
+        }
+    }
+}
