@@ -68,5 +68,6 @@ class CASDevSessionManager
             }
         }
         @file_put_contents($this->config->sessionFile, serialize($sessions));
+        @chmod($this->config->sessionFile, 0766);
     }
 }

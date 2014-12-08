@@ -168,6 +168,8 @@ class phpCAS
     
     public static function logoutWithRedirectService($path)
     {
+        $manager = CASDevSessionManager::singleton();
+        $manager->deleteSessionFor(session_id());
         header("Location: $path");
         exit;
     }
