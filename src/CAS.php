@@ -29,6 +29,9 @@ class phpCAS
     
     /**
      * Copied verbatim from phpCAS's Client.php
+     * - changed preference to be $_SERVER['HTTP_HOST'] over
+     *   $_SERVER['SERVER_NAME'] (which, with php -S returns 127.0.0.1
+     *   instead of localhost when requested with localhost).
      * 
      * @return string Server URL with domain:port
      */
@@ -42,7 +45,7 @@ class phpCAS
         } else if (!empty($_SERVER['HTTP_X_FORWARDED_SERVER'])) {
             $server_url = $_SERVER['HTTP_X_FORWARDED_SERVER'];
         } else {
-            if (empty($_SERVER['SERVER_NAME'])) {
+            if (!empty($_SERVER['HTTP_HOST'])) {
                 $server_url = $_SERVER['HTTP_HOST'];
             } else {
                 $server_url = $_SERVER['SERVER_NAME'];
