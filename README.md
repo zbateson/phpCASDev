@@ -20,4 +20,4 @@ phpCASDev uses configuration options in composer.json.  Default settings are tak
 ## Usage
 
 ```
-php -S 127.0.0.1 -t vendor/zbateson/phpcasdev
+php -S 127.0.0.1 -t vendor/zbateson/phpcasdev/web
