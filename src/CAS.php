@@ -1,5 +1,7 @@
 <?php
 
+define('CAS_VERSION_2_0', 'CAS_DEV');
+
 /**
  * Mimicking the phpCAS class where necessary to override its behaviour for
  * development.
