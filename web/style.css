@@ -1,0 +1,102 @@
+body {
+  background: #000;
+  background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  font-family: cursive;
+  color: #fff;
+  font-size: 12px;
+}
+.body-area {
+  margin: 100px auto 0px;
+  max-width: 650px;
+  border: 2px #fff ridge;
+  padding: 10px;
+  background: #000;
+  overflow: hidden;
+}
+h1 {
+  color: #ff0;
+}
+marquee {
+  background: #80f;
+  padding: 2px 0px;
+  position: relative;
+  z-index: 10;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-4 {
+  margin-bottom: 24px;
+}
+.form-row {
+  display: flex;
+}
+.form-row label {
+  display: block;
+  color: chartreuse;
+  width: 160px;
+  text-align: right;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+.form-row input {
+  width: 250px;
+  font-family: cursive;
+  border: 1px solid #80f;
+  background: #0ff;
+}
+.form-row input:focus {
+  outline: #ff0 1px solid;
+}
+.btn {
+  margin-left: 165px;
+  border: 1px solid #ff0;
+  background: #80f;
+}
+blink {
+  -webkit-animation: 2s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+.bin-bashy {
+  width: 100px;
+  height: 117px;
+  float: right;
+  margin-top: 5px;
+  animation: rotation 2s infinite linear;
+  position: relative;
+  z-index: 1;
+}
+
+.alert {
+  background: #f00;
+  color: #6ff;
+  margin-bottom: 0px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}

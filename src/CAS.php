@@ -12,7 +12,7 @@ class phpCAS
     private static $host;
     private static $port;
     private static $context;
-    
+
     /**
      * Overriding __callStatic so any function call not specifically defined
      * doesn't throw an exception.
@@ -21,20 +21,20 @@ class phpCAS
     {
         //do nothing
     }
-    
+
     public static function client($version, $host, $port, $context)
     {
         static::$host = $host;
         static::$port = $port;
         static::$context = $context;
     }
-    
+
     /**
      * Copied verbatim from phpCAS's Client.php
      * - changed preference to be $_SERVER['HTTP_HOST'] over
      *   $_SERVER['SERVER_NAME'] (which, with php -S returns 127.0.0.1
      *   instead of localhost when requested with localhost).
-     * 
+     *
      * @return string Server URL with domain:port
      */
     private static function _getClientUrl()
@@ -70,7 +70,7 @@ class phpCAS
         }
         return $server_url;
     }
-    
+
     /**
      * Copied and modified slightly from phpCAS's Client.php
      *
@@ -94,12 +94,12 @@ class phpCAS
             // If the query string still has anything left,
             // append it to the final URI
             if ($query_string !== '') {
-                $final_uri	.= "?$query_string";
+                $final_uri  .= "?$query_string";
             }
         }
         return $final_uri;
     }
-    
+
     /**
      * Copied verbatim from phpCAS's Client.php
      *
@@ -112,13 +112,13 @@ class phpCAS
      */
     private static function _removeParameterFromQueryString($parameterName, $queryString)
     {
-        $parameterName	= preg_quote($parameterName);
+        $parameterName  = preg_quote($parameterName);
         return preg_replace(
             "/&$parameterName(=[^&]*)?|^$parameterName(=[^&]*)?&?/",
             '', $queryString
         );
     }
-    
+
     /**
      * Copied verbatim from phpCAS's Client.php
      *
@@ -138,7 +138,7 @@ class phpCAS
             return false;
         }
     }
-    
+
     /**
      * Redirects to a page with a username text field allowing a user to login
      * with any username for testing.
@@ -154,13 +154,13 @@ class phpCAS
             $str .= ':' . static::$port;
         }
         $str .= static::$context . '?service=' . urlencode(static::getUrl());
-        
+
         session_start();
         $str .= '&token=' . urlencode(session_id());
         header('Location: ' . $str);
         exit;
     }
-    
+
     public static function isAuthenticated()
     {
         $manager = CASDevSessionManager::singleton();
@@ -170,7 +170,7 @@ class phpCAS
         }
         return false;
     }
-    
+
     public static function logoutWithRedirectService($path)
     {
         $manager = CASDevSessionManager::singleton();
@@ -178,7 +178,7 @@ class phpCAS
         header("Location: $path");
         exit;
     }
-    
+
     public static function getUser()
     {
         $manager = CASDevSessionManager::singleton();
@@ -188,7 +188,7 @@ class phpCAS
         }
         return null;
     }
-    
+
     public static function getAttributes()
     {
         $manager = CASDevSessionManager::singleton();
@@ -197,5 +197,11 @@ class phpCAS
             return $session->attributes;
         }
         return null;
+    }
+
+    public static function getAttribute($key)
+    {
+        $attribs = self::getAttributes();
+        return (isset($attribs[$key])) ? $attribs[$key] : null;
     }
 }
