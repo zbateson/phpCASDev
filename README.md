@@ -1,4 +1,4 @@
-# phpCASDev (in development, pre-beta)
+# phpCASDev
 
 Simple development/testing environment for CAS authentication in PHP.  Allows bypassing requests to a CAS server, serving a local login page with a single password and an open user field.
 
@@ -10,8 +10,7 @@ The package is intended as a drop-in replacement for jasig/phpcas.  The argument
 composer require-dev phpcas-dev
 ```
 
-> phpcas-dev 'provides' jasig/phpcas, and overrides phpCAS.
-
+> phpcas-dev 'provides' jasig/phpcas, which causes it to be removed in 'dev'.
 
 ## Configuration
 
