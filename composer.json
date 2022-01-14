@@ -13,7 +13,7 @@
         }
     ],
     "provide": {
-        "jasig/phpcas": "~1.3"
+        "jasig/phpcas": ">=1.3"
     },
     "autoload": {
         "classmap": ["src/"]
@@ -21,9 +21,14 @@
     "extra": {
         "casdev": {
             "password": "testing",
-            "defaultAttributes": "USER",
-            "sessionFile": "auth-map",
-            "sessionExpiryTime": 20
+            "userAttributeId": "username",
+            "userAttributeName": "CAS User",
+            "attributes": {
+                "extraFieldId": "Extra Field Name"
+            },
+            "defaultAttributes": {
+                "extraFieldId": "default value"
+            }
         }
     }
 }
