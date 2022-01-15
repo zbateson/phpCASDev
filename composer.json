@@ -28,7 +28,9 @@
             },
             "defaultAttributes": {
                 "extraFieldId": "default value"
-            }
+            },
+            "sessionFile": "auth-map",
+            "sessionExpiryTime": 20
         }
     }
 }
