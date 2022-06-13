@@ -1,6 +1,9 @@
 <?php
 
+define('CAS_VERSION_1_0', 'CAS_DEV');
 define('CAS_VERSION_2_0', 'CAS_DEV');
+define('CAS_VERSION_3_0', 'CAS_DEV');
+define('SAML_VERSION_1_1', 'CAS_DEV');
 
 /**
  * Mimicking the phpCAS class where necessary to override its behaviour for
